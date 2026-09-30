@@ -1,28 +1,25 @@
-<?php 
+<?php
 
-class Goleiro extends Jogador {
-    private int $defesas;
+require_once("modelo/Jogador.php");
 
-    public function __construct(string $nome, string $nacionalidade, string $time, float $valorDeMercado, int $overall,  int $defesas)
+class Goleiro extends Jogador
+{
+    protected int $reflexo;
+    protected int $posicionamento;
+
+    public function __construct($nome, $nacionalidade, $time, $valor, $overall, $reflexo, $posicionamento)
     {
-        $this->defesas = $defesas;
+        parent::__construct($nome, $nacionalidade, $time, $valor, $overall);
+
+        $this->reflexo = $reflexo;
+        $this->posicionamento = $posicionamento;
     }
 
-    public function getDefesas(): int
+    public function exibir()
     {
-        return $this->defesas;
-    }
+        parent::exibir();
 
-    public function setDefesas(int $defesas): self
-    {
-        $this->defesas = $defesas;
-
-        return $this;
+        echo "Reflexo: " . $this->reflexo . "\n";
+        echo "Posicionamento: " . $this->posicionamento . "\n";
     }
 }
-
-
-
-
-
-
