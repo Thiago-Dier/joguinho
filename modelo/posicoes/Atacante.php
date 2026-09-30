@@ -1,25 +1,49 @@
-<?php 
+<?php
 
-class Atacante extends Jogador {
+require_once("modelo/Jogador.php");
 
-    private int $golsMarcados;
+class Atacante extends Jogador
+{
+    protected int $finalizacao;
+    protected int $velocidade;
 
-    #[Override]
-    public function __construct(string $nome, string $nacionalidade, string $time, float $valorDeMercado, int $overall, int $golsMarcados)
+    public function __construct($nome, $nacionalidade, $time, $valor, $overall, $finalizacao, $velocidade)
     {
-        $this->golsMarcados = $golsMarcados;
+        parent::__construct($nome, $nacionalidade, $time, $valor, $overall);
+
+        $this->finalizacao = $finalizacao;
+        $this->velocidade = $velocidade;
     }
 
-    public function getGolsMarcados(): int
+    public function exibir()
     {
-        return $this->golsMarcados;
+        parent::exibir();
+
+        echo "Finalização: " . $this->finalizacao . "\n";
+        echo "Velocidade: " . $this->velocidade . "\n";
     }
 
-    public function setGolsMarcados(int $golsMarcados): self
+    public function getFinalizacao(): int
     {
-        $this->golsMarcados = $golsMarcados;
+        return $this->finalizacao;
+    }
+
+    public function setFinalizacao(int $finalizacao): self
+    {
+        $this->finalizacao = $finalizacao;
+
+        return $this;
+    }
+
+    public function getVelocidade(): int
+    {
+        return $this->velocidade;
+    }
+
+    public function setVelocidade(int $velocidade): self
+    {
+        $this->velocidade = $velocidade;
 
         return $this;
     }
 }
-
