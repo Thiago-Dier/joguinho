@@ -1,23 +1,25 @@
-<?php 
+<?php
 
-class Zagueiro extends Jogador{
-    private int $desarmes;
+require_once("modelo/Jogador.php");
 
-    public function __construct(string $nome, string $nacionalidade, string $time, float $valorDeMercado, int $overall, int $desarmes)
+class Zagueiro extends Jogador
+{
+    protected int $defesa;
+    protected int $fisico;
+
+    public function __construct($nome, $nacionalidade, $time, $valor, $overall, $defesa, $fisico)
     {
-        $this->desarmes = $desarmes;
+        parent::__construct($nome, $nacionalidade, $time, $valor, $overall);
+
+        $this->defesa = $defesa;
+        $this->fisico = $fisico;
     }
 
-    public function getDesarmes(): int
+    public function exibir()
     {
-        return $this->desarmes;
-    }
+        parent::exibir();
 
-    public function setDesarmes(int $desarmes): self
-    {
-        $this->desarmes = $desarmes;
-
-        return $this;
+        echo "Defesa: " . $this->defesa . "\n";
+        echo "Físico: " . $this->fisico . "\n";
     }
 }
-
