@@ -1,22 +1,32 @@
-<?php 
+<?php
 
-class Jogador {
+class Jogador
+{
     protected string $nome;
     protected string $nacionalidade;
     protected string $time;
-    protected float $valorDeMercado;
+    protected float $valor;
     protected int $overall;
 
-    public function __construct(string $nome, string $nacionalidade, string $time, float $valorDeMercado, int $overall)
+    public function __construct(string $nome, string $nacionalidade, string $time, float $valor, int $overall)
     {
         $this->nome = $nome;
         $this->nacionalidade = $nacionalidade;
         $this->time = $time;
-        $this->valorDeMercado = $valorDeMercado;
+        $this->valor = $valor;
         $this->overall = $overall;
     }
 
-    public function getNome(): string
+    public function exibir()
+    {
+        echo "Nome: " . $this->nome . "\n";
+        echo "Nacionalidade: " . $this->nacionalidade . "\n";
+        echo "Time: " . $this->time . "\n";
+        echo "Valor: €" . number_format($this->valor, 0, ',', '.') . "\n";
+        echo "Overall: " . $this->overall . "\n";
+    }
+
+    public function getNome()
     {
         return $this->nome;
     }
@@ -28,7 +38,7 @@ class Jogador {
         return $this;
     }
 
-    public function getNacionalidade(): string
+    public function getNacionalidade()
     {
         return $this->nacionalidade;
     }
@@ -40,7 +50,7 @@ class Jogador {
         return $this;
     }
 
-    public function getTime(): string
+    public function getTime()
     {
         return $this->time;
     }
@@ -52,19 +62,19 @@ class Jogador {
         return $this;
     }
 
-    public function getValorDeMercado(): float
+    public function getValor()
     {
-        return $this->valorDeMercado;
+        return $this->valor;
     }
 
-    public function setValorDeMercado(float $valorDeMercado): self
+    public function setValor(float $valor): self
     {
-        $this->valorDeMercado = $valorDeMercado;
+        $this->valor = $valor;
 
         return $this;
     }
 
-    public function getOverall(): int
+    public function getOverall()
     {
         return $this->overall;
     }
@@ -76,4 +86,3 @@ class Jogador {
         return $this;
     }
 }
-
