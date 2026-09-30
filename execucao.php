@@ -54,9 +54,9 @@ $Barcha = [
 // JOGADORES MANSHINE CITY
 $ManshineCity = [ 
     new Atacante("Chris Prince", "Inglaterra(ENG) 🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Manshine City - 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 1000000000, 99, 99, 99),
-    new Atacante("Agi", "Inglaterra(ENG) 🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Manshine City - 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 800000000, 91, 94, 94), 
-    new Atacante("Seishiro Nagi", "Japão(JPN) 🇯🇵", "Manshine City - 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 240000000, 93, 97, 85), 
-    new Meia("Reo Mikage", "Japão(JPN) 🇯🇵", "Manshine City - 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 780000000, 93, 97, 95) 
+    new Atacante("Agi", "Inglaterra(ENG) 🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Manshine City - 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 80000000, 91, 94, 94), 
+    new Atacante("Seishiro Nagi", "Japão(JPN) 🇯🇵", "Manshine City - 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 24000000, 93, 97, 85), 
+    new Meia("Reo Mikage", "Japão(JPN) 🇯🇵", "Manshine City - 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 78000000, 93, 97, 95) 
 ];
 
 $jogadores = array_merge(      // array_merge junta vários arrays em um único array.
