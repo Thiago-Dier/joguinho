@@ -1,24 +1,25 @@
-<?php 
+<?php
 
-class Meia extends Jogador {
-    private int $assistencias;
+require_once("modelo/Jogador.php");
 
-    public function __construct(string $nome, string $nacionalidade, string $time, float $valorDeMercado, int $overall, int $assistencias)
+class Meia extends Jogador
+{
+    protected int $passe;
+    protected int $drible;
+
+    public function __construct($nome, $nacionalidade, $time, $valor, $overall, $passe, $drible)
     {
-        $this->assistencias = $assistencias;
+        parent::__construct($nome, $nacionalidade, $time, $valor, $overall);
+
+        $this->passe = $passe;
+        $this->drible = $drible;
     }
 
-    public function getAssistencias(): int
+    public function exibir()
     {
-        return $this->assistencias;
-    }
+        parent::exibir();
 
-    public function setAssistencias(int $assistencias): self
-    {
-        $this->assistencias = $assistencias;
-
-        return $this;
+        echo "Passe: " . $this->passe . "\n";
+        echo "Drible: " . $this->drible . "\n";
     }
 }
-
-
